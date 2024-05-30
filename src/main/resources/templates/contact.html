@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Basic -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Mobile Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Site Metas -->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Fregg</title>
+
+<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+<!-- font wesome stylesheet -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+<!-- fonts style -->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+	rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+	<div class="hero_area">
+		<!-- header section -->
+		<header
+			th:if="${userRole == 'ROLE_USER' || userRole == 'ROLE_USER_ROLE'}"
+			th:include="header :: main-header"></header>
+		<header
+			th:if="${userRole == 'ROLE_ADMIN' || userRole == 'ROLE_ADMIN_ROLE'}"
+			th:include="header2 :: main-header"></header>
+		<header th:if="${userRole == 'guest'}"
+			th:include="header3 :: main-header"></header>
+
+		<!-- end header section -->
+	</div>
+
+
+	<div class="body_bg layout_padding">
+
+
+		<!-- contact section -->
+
+		<section class="contact_section">
+			<div class="container">
+				<div class="heading_container">
+					<h2>Let's Get In Touch!</h2>
+				</div>
+			</div>
+			<div class="container contact_bg layout_padding2-top">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="contact_form ">
+							<div th:if="${session.message}"
+								th:classappend="${session.message.type}" class="alert"
+								role="alert">
+								<p th:text="${session.message.content}"></p>
+								<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+
+							</div>
+							<form th:action="@{/do_contact}" th:method="Post"
+								th:object="${contact}">
+								<input type="text" placeholder="Name " name="name"
+									class="form-control "
+									th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+								<input type="email" placeholder="Email" name="email"
+									class="form-control "
+									th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('email')}" th:text="${e}">
+
+								</div>
+								<input type="text" placeholder="Message" name="message"
+									class="message_input form-control "
+									th:classappend="${#fields.hasErrors('message') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('message')}" th:text="${e}">
+
+								</div>
+								<button>Send</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="img-box">
+							<img src="images/contact-img.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- end contact section -->
+
+	</div>
+	<!-- info section -->
+
+	<section class="info_section layout_padding">
+		<div class="footer_contact">
+			<div class="heading_container">
+				<h2>Contact Us</h2>
+			</div>
+			<div class="box">
+				<a href="" class="img-box"> <img src="images/location.png"
+					alt="" class="img-1"> <img src="images/location-o.png" alt=""
+					class="img-2">
+				</a> <a href="" class="img-box"> <img src="images/call.png" alt=""
+					class="img-1"> <img src="images/call-o.png" alt=""
+					class="img-2">
+				</a> <a href="" class="img-box"> <img src="images/envelope.png"
+					alt="" class="img-1"> <img src="images/envelope-o.png" alt=""
+					class="img-2">
+				</a>
+			</div>
+		</div>
+
+
+	</section>
+
+
+	<!-- end info section -->
+
+	<!-- footer section -->
+	<section class="container-fluid footer_section">
+		<p>Copyright &copy; 2024 All Rights Reserved By @Ravita Prajapati
+		</p>
+	</section>
+	<!-- footer section -->
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

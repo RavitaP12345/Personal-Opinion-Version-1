@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Basic -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Mobile Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Site Metas -->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Opinion</title>
+
+<!-- slider stylesheet -->
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+<!-- font wesome stylesheet -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+<!-- fonts style -->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+	rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+	<div class="hero_area">
+		<!-- header section -->
+		<header
+			th:if="${userRole == 'ROLE_USER' || userRole == 'ROLE_USER_ROLE'}"
+			th:include="header :: main-header"></header>
+		<header
+			th:if="${userRole == 'ROLE_ADMIN' || userRole == 'ROLE_ADMIN_ROLE'}"
+			th:include="header2 :: main-header"></header>
+		<header th:if="${userRole == 'guest'}"
+			th:include="header3 :: main-header"></header>
+
+		<!-- end header section -->
+	</div>
+
+	<div class="body_bg layout_padding">
+		<section class="contact_section ">
+			<div class="container">
+				<div class="heading_container">
+					<h2>All Active User</h2>
+				</div>
+			</div>
+			<div class="container contact_bg layout_padding2-top">
+				<div class="row" style="padding-bottom: 50px;">
+					<div class="col-md-6" th:each="user : ${users}">
+					 <div class="card user-card">
+                    <div class="card-body">
+                        <img th:src="${user.profile}" class="card-img-top mx-auto d-block" alt="User Image">
+                        <h5 class="card-title mt-3" th:text="${user.name}"></h5>
+                        <p class="card-text" th:utext="${user.about}"></p>
+                       
+                    </div>
+                </div>
+
+					</div>
+				</div>
+
+
+	</div>
+	</section>
+
+	<!-- end contact section -->
+
+
+	</div>
+	<!-- info section -->
+
+
+	<!-- end info section -->
+
+	<!-- footer section -->
+	<section class="container-fluid footer_section">
+		<p>Copyright &copy; 2024 All Rights Reserved By @Ravita Prajapati
+		</p>
+	</section>
+	<!-- footer section -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+
+</body>
+
+</html>

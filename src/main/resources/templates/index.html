@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Basic -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Mobile Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Site Metas -->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Fregg</title>
+
+<!-- slider stylesheet -->
+
+
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+
+
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+<!-- font wesome stylesheet -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+<!-- fonts style -->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+	rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="hero_area">
+		<!-- <header th:replace="~{'header3' :: main-header}"></header> -->
+		<!-- <header th:replace="~{'header3' :: main-header}"></header> -->
+		<header
+			th:if="${userRole == 'ROLE_USER' || userRole == 'ROLE_USER_ROLE'}"
+			th:include="header :: main-header"></header>
+		<header
+			th:if="${userRole == 'ROLE_ADMIN' || userRole == 'ROLE_ADMIN_ROLE'}"
+			th:include="header2 :: main-header"></header>
+
+		<!-- slider section -->
+		<section class=" slider_section position-relative">
+			<div id="carouselExampleIndicators" class="carousel slide"
+				data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0"
+						class="active">01</li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-7">
+									<div class="detail-box">
+										<div>
+											<h1>
+												Welcome To <br> <span> Our Personal Opinion
+													System </span>
+											</h1>
+											<p>A platform dedicated to fostering meaningful
+												discussions and sharing insightful opinions on various
+												topics.</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-7">
+									<div class="detail-box">
+										<div>
+											<h1>
+												Welcome To <br> <span> Our Personal Opinion
+													System </span>
+											</h1>
+											<p>Check out our latest opinion piece: "The Importance of
+												Sustainable Living in Modern Society" by Ravita Prajapati.</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="custom_carousel-control">
+					<a class="carousel-control-prev" href="#carouselExampleIndicators"
+						role="button" data-slide="prev"> <span class="sr-only">Previous</span>
+					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+						role="button" data-slide="next"> <span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!-- end slider section -->
+	</div>
+
+	<!-- about section -->
+
+	<section class="about_section layout_padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="detail-box">
+						<div class="heading_container">
+							<h2>About Us</h2>
+						</div>
+						<p>At The Opinion Hub, we believe in the power of diverse
+							perspectives to drive positive change. Our mission is to provide
+							a platform where individuals can express their opinions, engage
+							in respectful discourse, and contribute to a more informed
+							society.</p>
+						<a href=""> Get Started </a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="img-box">
+						<img src="images/about-img.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end about section -->
+	<div class="body_bg layout_padding">
+
+		<!-- service section -->
+
+		<section class="service_section ">
+			<div class="container">
+				<div class="heading_container">
+					<h2>You can write on</h2>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box" style="text-align: justify;">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Climate Change</h4>
+							<p>Climate change is one of the most critical challenges
+								facing humanity today. It refers to long-term shifts in
+								temperature, precipitation patterns, and other climatic
+								variables, primarily caused by human activities such as burning
+								fossil fuels, deforestation, and industrial processes.</p>
+							<a
+								href="https://www.worldbank.org/en/news/feature/2013/06/19/india-climate-change-impacts">
+								Read More </a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div
+							class="box align-items-end align-items-md-start text-right text-md-left">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Population of India</h4>
+							<p style="text-align: justify;">India is the second-most
+								populous country in the world, home to a diverse and vibrant
+								population of over 1.3 billion people. With its rich cultural
+								heritage, ancient history, and rapid economic growth, India's
+								population plays a significant role in shaping global
+								demographics and socio-economic dynamics.</p>
+							<a
+								href="https://www.worldometers.info/world-population/india-population/">
+								Read More </a>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box" style="text-align: justify;">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Education System</h4>
+							<p>While significant progress has been made in expanding
+								access to education, the quality of education remains a concern.
+								Challenges include inadequate infrastructure, teacher shortages,
+								outdated curricula, and a high dropout rate, particularly among
+								marginalized communities.</p>
+							<a href="https://www.gnu.org/education/edu-system-india.en.html">
+								Read More </a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div
+							class="box align-items-end align-items-md-start text-right text-md-left">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Healthcare Challenges</h4>
+							<p style="text-align: justify;">Access to quality healthcare
+								remains a major challenge for many Indians, especially in rural
+								areas where healthcare infrastructure is inadequate. Issues such
+								as high out-of-pocket expenses, limited access to essential
+								medicines, and inadequate public health programs contribute to
+								poor health outcomes.</p>
+							<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6166510/">
+								Read More </a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box" style="text-align: justify;">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Social Issues</h4>
+							<p>India grapples with various social issues such as gender
+								inequality, caste-based discrimination, religious tensions, and
+								violence against marginalized communities. Addressing these
+								social issues is essential for promoting social cohesion,
+								equality, and justice.</p>
+							<a href=""> Read More </a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div
+							class="box align-items-end align-items-md-start text-right text-md-left">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Corruption and Governance</h4>
+							<p style="text-align: justify;">Corruption is a pervasive
+								problem in India, affecting various sectors including politics,
+								bureaucracy, and law enforcement. Weak governance, bureaucratic
+								red tape, and inefficiency in public service delivery hinder
+								economic growth and development.</p>
+							<a href="https://azadindia.org/social-issues/index.html">
+								Read More </a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box" style="text-align: justify;">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Poverty and Income Inequality</h4>
+							<p>Despite significant economic growth, poverty remains a
+								pervasive issue in India, with a large population living below
+								the poverty line. Income inequality is also a concern, with
+								disparities between urban and rural areas, as well as within
+								different socio-economic groups.</p>
+							<a
+								href="https://www.oxfam.org/en/india-extreme-inequality-numbers">
+								Read More </a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div
+							class="box align-items-end align-items-md-start text-right text-md-left">
+							<div class="img-box">
+								<img src="images/s-4.png" alt="">
+							</div>
+							<h4>Unemployment and Underemployment</h4>
+							<p style="text-align: justify;">India faces high levels of
+								unemployment, particularly among its youth population, leading
+								to social unrest and economic instability. Underemployment,
+								where individuals are employed in jobs that do not fully utilize
+								their skills or education, is also widespread.</p>
+							<a
+								href="https://www.forbesindia.com/article/explainers/unemployment-rate-in-india/87441/1">
+								Read More </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- end service section -->
+
+
+
+		<!-- contact section -->
+
+		<section class="contact_section">
+			<div class="container">
+				<div class="heading_container">
+					<h2>Let's Get In Touch!</h2>
+				</div>
+			</div>
+			<div class="container contact_bg layout_padding2-top">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="contact_form ">
+
+
+							<div th:if="${session.message}"
+								th:classappend="${session.message.type}" class="alert"
+								role="alert">
+								<p th:text="${session.message.content}"></p>
+								<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+
+							</div>
+							<form th:action="@{/do_contact}" th:method="Post"
+								th:object="${contact}">
+								<input type="text" placeholder="Name " name="name"
+									class="form-control "
+									th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+								<input type="email" placeholder="Email" name="email"
+									class="form-control "
+									th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('email')}" th:text="${e}">
+
+								</div>
+								<input type="text" placeholder="Message" name="message"
+									class="message_input form-control "
+									th:classappend="${#fields.hasErrors('message') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('message')}" th:text="${e}">
+
+								</div>
+								<button>Send</button>
+							</form>
+
+
+							<!-- <form action="">
+                <input type="text" placeholder="Name ">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Message" class="message_input">
+                <button>
+                  Send
+                </button>
+              </form> -->
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="img-box">
+							<img src="images/contact-img.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- end contact section -->
+
+		<!-- client section -->
+
+		<section class="client_section layout_padding-top">
+			<div class="d-flex justify-content-center">
+				<div class="heading_container">
+					<h2>Our Active Users</h2>
+				</div>
+			</div>
+			<div class="container layout_padding2">
+				<div id="carouselExample2Indicators" class="carousel slide"
+					data-ride="carousel">
+					<div class="carousel-inner">
+						<th:block th:each="user, iterStat : ${users}">
+							<div class="carousel-item"
+								th:classappend="${iterStat.index == 0} ? 'active' : ''">
+								<div class="client_container">
+									<div class="client-id">
+										<div class="img-box">
+											<img th:src="${user.profile}" alt="">
+										</div>
+										<div class="client_name">
+											<div>
+												<h3 th:text="${user.name}"></h3>
+												<p th:text="${user.email}"></p>
+
+											</div>
+
+										</div>
+									</div>
+									<div class="client_detail">
+										<div class="client_text">
+											<h6 style="font-weight: 800;">About</h6>
+											<blockquote>
+												<p th:utext="${user.about}"></p>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+							</div>
+						</th:block>
+					</div>
+					<!-- Carousel controls -->
+					<div class="custom_carousel-control">
+						<a class="carousel-control-prev"
+							href="#carouselExample2Indicators" role="button"
+							data-slide="prev"> <span class="carousel-control-prev-icon"
+							aria-hidden="true"></span> <span class="sr-only">Previous</span>
+						</a> <a class="carousel-control-next"
+							href="#carouselExample2Indicators" role="button"
+							data-slide="next"> <span class="carousel-control-next-icon"
+							aria-hidden="true"></span> <span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- end client section -->
+
+
+	</div>
+	<!-- info section -->
+
+	<section class="info_section layout_padding">
+		<div class="footer_contact">
+			<div class="heading_container">
+				<h2>Contact Us</h2>
+			</div>
+			<div class="box">
+				<a href="" class="img-box"> <img src="images/location.png"
+					alt="" class="img-1"> <img src="images/location-o.png" alt=""
+					class="img-2">
+				</a> <a href="" class="img-box"> <img src="images/call.png" alt=""
+					class="img-1"> <img src="images/call-o.png" alt=""
+					class="img-2">
+				</a> <a href="" class="img-box"> <img src="images/envelope.png"
+					alt="" class="img-1"> <img src="images/envelope-o.png" alt=""
+					class="img-2">
+				</a>
+			</div>
+		</div>
+
+
+	</section>
+
+
+	<!-- end info section -->
+
+	<!-- footer section -->
+	<section class="container-fluid footer_section">
+		<p>Copyright &copy; 2024 All Rights Reserved By @Ravita Prajapati
+		</p>
+	</section>
+	<!-- footer section -->
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
