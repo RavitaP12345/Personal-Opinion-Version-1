@@ -83,7 +83,7 @@
             	<div id="deleteModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="hideModal()">&times;</span>
-            <p>Are you sure you want to delete your account?</p>
+            <p>Are you sure you want to delete?</p>
             <form th:action="@{/deleteMyPost}" method="post">
                 <input type="hidden" th:value="${post.postId}" name="postId"/>
                 <button type="submit" style="background-color: #FA928D;">Yes, Delete my Account</button>
