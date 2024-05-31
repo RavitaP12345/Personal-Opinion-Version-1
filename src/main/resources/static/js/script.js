@@ -19,7 +19,7 @@ function toggleEditedDetailsV1(id) {
 function deleteAccount() {
     // Implement delete account functionality here
     // For example, display a confirmation dialog and then delete the account
-    if (confirm('Are you sure you want to delete your account?')) {
+    if (confirm('Are you sure you want to delete?')) {
         // Delete account logic goes here
     }
   }
