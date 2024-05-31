@@ -249,11 +249,11 @@ public class HomeController {
 			System.out.println("userRole===>" + userRole);
 			model.addAttribute("userRole", userRole);
 			if (userRole.equalsIgnoreCase("guest")) {
-				return "Login";
+				return "redirect:/";
 			}
 			return "redirect:/getIndexPage";
 		} catch (Exception e) {
-			return "redirect:/login";
+			return "redirect:/";
 		}
 
 	}
