@@ -253,7 +253,7 @@ public class HomeController {
 			}
 			return "redirect:/getIndexPage";
 		} catch (Exception e) {
-			return "redirect:/";
+			return "redirect:/login";
 		}
 
 	}
