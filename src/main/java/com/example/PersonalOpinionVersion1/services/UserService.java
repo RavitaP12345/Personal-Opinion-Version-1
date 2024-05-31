@@ -183,6 +183,7 @@ public class UserService {
 			contactEntity.setMessage(contactModel.getMessage());
 			contactEntity.setCreatedBy(contactModel.getName());
 			contactEntity.setUpdatedBy(contactModel.getName());
+			contactEntity.setStatus("Active");
 			contactEntity.setUpdateDate(new Date());
 			contactEntity.setCreateionDate(new Date());
 			contactRepository.save(contactEntity);
