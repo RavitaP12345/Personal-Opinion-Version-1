@@ -74,7 +74,7 @@
               <div class="icon-container">
               <!-- <form th:action="@{/deleteMyPost}" method="post" style="display:inline;"> -->
               <!-- <input type="hidden" name="postId" th:value="${post.postId}"> -->
-            	<button class="delete-btn" onclick="showModal()">Delete Account</button>
+            	<button class="delete-btn" onclick="showModal()">Delete</button>
             	<!-- </form> -->
             <form th:action="@{/UpdateMyPost}" method="post" style="display:inline;">
             <input type="hidden" name="postId" th:value="${post.postId}">
@@ -86,7 +86,7 @@
             <p>Are you sure you want to delete?</p>
             <form th:action="@{/deleteMyPost}" method="post">
                 <input type="hidden" th:value="${post.postId}" name="postId"/>
-                <button type="submit" style="background-color: #FA928D;">Yes, Delete my Account</button>
+                <button type="submit" style="background-color: #FA928D;">Yes, Delete</button>
             </form>
             <button onclick="hideModal()">Cancel</button>
         </div>
